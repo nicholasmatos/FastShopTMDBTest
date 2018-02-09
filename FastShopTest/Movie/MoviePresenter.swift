@@ -64,5 +64,9 @@ class MoviePresenter: NSObject, UICollectionViewDelegate, UICollectionViewDataSo
         
         return CGSize(width: width, height: height)
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let content = self.movies[indexPath.row]
+        MainRouter().showMovieDetail(movie: content)
+    }
 }

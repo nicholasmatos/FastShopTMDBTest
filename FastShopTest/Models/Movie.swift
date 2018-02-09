@@ -12,6 +12,7 @@ class Movie: BaseContent {
     var overview: String?
     var releaseDate: String?
     var voteAverage: Float?
+    var backdropImage: String?
     
     override init(data: NSDictionary)
     {
@@ -20,5 +21,6 @@ class Movie: BaseContent {
         self.overview = data.object(forKey: "overview") as? String
         self.releaseDate = data.object(forKey: "release_date") as? String
         self.voteAverage = data.object(forKey: "vote_average") as? Float
+        self.backdropImage = data.object(forKey: "backdrop_path") as? String
     }
 }

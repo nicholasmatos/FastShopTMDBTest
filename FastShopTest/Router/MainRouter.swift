@@ -20,4 +20,14 @@ class MainRouter: NSObject {
             navigation.pushViewController(moviePresenter.movieCollection, animated: true)
         }
     }
+    
+    func showMovieDetail(movie: Movie){
+        let movieDetailPresenter = MovieDetailPresenter()
+        movieDetailPresenter.movie = movie
+        movieDetailPresenter.registerDelegate()
+        
+        if let navigation = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+            navigation.pushViewController(movieDetailPresenter.movieDetailCollection, animated: true)
+        }
+    }
 }

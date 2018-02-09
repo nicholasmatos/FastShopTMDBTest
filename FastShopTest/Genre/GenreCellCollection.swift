@@ -47,6 +47,11 @@ class GenreCellCollection: UICollectionViewCell, UICollectionViewDelegate, UICol
         return CGSize(width: (self.collectionView.frame.height - 30.0) * 0.701, height: self.collectionView.frame.height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let content = self.movies[indexPath.row]
+        MainRouter().showMovieDetail(movie: content)
+    }
+    
     @IBAction func moviesByGenre(_ sender: Any) {
         MainRouter().showMovieCollection(genreId: self.genreId)
     }

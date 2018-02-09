@@ -9,7 +9,12 @@
 import UIKit
 
 class ImageHelper: NSObject {
-    class func getImageUrl(widthSize: String, suffix: String) -> String{
-        return TMDBApiSettings.sharedInstance.baseImageURL + "w\(widthSize)" + suffix
+    class func getImageUrl(widthSize: String, suffix: String?) -> String{
+        
+        if suffix == nil{
+            return ""
+        }
+        
+        return TMDBApiSettings.sharedInstance.baseImageURL + "w\(widthSize)" + suffix!
     }
 }
