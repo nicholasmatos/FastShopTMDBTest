@@ -1,0 +1,6 @@
+framework module Pods_FastShopTest {
+  umbrella header "Pods-FastShopTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
