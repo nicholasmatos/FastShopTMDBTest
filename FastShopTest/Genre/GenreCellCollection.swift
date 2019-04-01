@@ -36,8 +36,10 @@ class GenreCellCollection: UICollectionViewCell, UICollectionViewDelegate, UICol
         let content = self.movies[indexPath.row]
         
         cell.titleLabel.text = content.title
-        let url = URL(string: ImageHelper.getImageUrl(widthSize: "200", suffix: content.posterImage!))
-        cell.imageView.sd_setImage(with: url, completed: nil)
+        if let posterImage = content.posterImage{
+            let url = URL(string: ImageHelper.getImageUrl(widthSize: "200", suffix: posterImage))
+            cell.imageView.sd_setImage(with: url, completed: nil)
+        }
         
         return cell
     }
