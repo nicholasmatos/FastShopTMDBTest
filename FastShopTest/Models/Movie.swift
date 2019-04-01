@@ -20,7 +20,11 @@ class Movie: BaseContent {
         
         self.overview = data.object(forKey: "overview") as? String
         self.releaseDate = data.object(forKey: "release_date") as? String
-        self.voteAverage = data.object(forKey: "vote_average") as? Float
+        if let average = data.object(forKey: "vote_average") as? Float{
+            self.voteAverage = average
+        }else{
+            self.voteAverage = 10.0
+        }
         self.backdropImage = data.object(forKey: "backdrop_path") as? String
     }
 }
